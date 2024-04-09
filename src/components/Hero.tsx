@@ -10,9 +10,9 @@ const Hero = () => {
                 <main className="text-5xl md:text-6xl font-bold">
                     <h1 className="inline">
             <span className="inline bg-gradient-to-r from-[#F596D3]  to-[#D247BF] text-transparent bg-clip-text">
-              Shadcn
+              Landing
             </span>{" "}
-                        landing page
+                      page
                     </h1>{" "}
                     for{" "}
                     <h2 className="inline">
@@ -32,7 +32,7 @@ const Hero = () => {
                     <Button className="w-full md:w-1/3">Get Started</Button>
 
                     <a
-                        href="https://github.com/leoMirandaa/shadcn-landing-page.git"
+                        href="https://github.com/TrixDiaz"
                         target="_blank"
                         className={`w-full md:w-1/3 ${buttonVariants({
                             variant: "outline",

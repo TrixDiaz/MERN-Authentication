@@ -1,5 +1,6 @@
 import Header from "@/components/Header"
-import Hero from "@/components/Hero"
+import {Jumbotron} from "@/components/Jumbotron.tsx";
+import Hero from "@/components/Hero.tsx";
 import {About} from "@/components/About";
 import {HowItWorks} from "@/components/HowItWorks";
 import {Features} from "@/components/Features";
@@ -11,10 +12,12 @@ import {Newsletter} from "@/components/Newsletter";
 import {FAQ} from '@/components/FAQ'
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+
 const Welcome = () => {
     return (
         <>
             <Header/>
+            <Jumbotron/>
             <Hero/>
             <About/>
             <HowItWorks/>
