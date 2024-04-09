@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ArrowUpToLine } from "lucide-react";
 
-export const ScrollToTop = () => {
+const ScrollToTop = () => {
     const [showTopBtn, setShowTopBtn] = useState(false);
 
     useEffect(() => {
@@ -36,3 +36,5 @@ export const ScrollToTop = () => {
         </>
     );
 };
+
+export default ScrollToTop

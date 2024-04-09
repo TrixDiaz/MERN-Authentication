@@ -1,21 +1,24 @@
-import { useState } from "react";
+import {useState} from "react"
 import {
     NavigationMenu,
     NavigationMenuItem,
     NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/navigation-menu"
 import {
     Sheet,
     SheetContent,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { buttonVariants } from "./ui/button";
-import { Link, useLocation } from "react-router-dom";
-import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
+} from "@/components/ui/sheet"
+import {Menu} from "lucide-react"
+import {buttonVariants} from "./ui/button"
+import {Link} from "react-router-dom"
+import {ModeToggle} from "./mode-toggle"
+import {LogoIcon} from "./Icons"
+import LoginDialog from '@/components/LoginDialog'
+
+
 
 interface RouteProps {
     href: string;
@@ -43,10 +46,7 @@ const routeList: RouteProps[] = [
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const location = useLocation();
-    const isLoginPage = location.pathname.includes('login');
-    return (
-        <>
+    return (<>
             <header
                 className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
                 <NavigationMenu className="mx-auto">
@@ -55,14 +55,14 @@ const Header = () => {
                             <Link to={'/'}
                                   className="ml-2 font-bold text-xl flex"
                             >
-                                <LogoIcon />
+                                <LogoIcon/>
                                 React
                             </Link>
                         </NavigationMenuItem>
 
                         {/* mobile */}
                         <span className="flex md:hidden">
-                            <ModeToggle />
+                            <ModeToggle/>
 
                             <Sheet
                                 open={isOpen}
@@ -94,14 +94,7 @@ const Header = () => {
                                                 {label}
                                             </Link>
                                         ))}
-                                        <Link
-                                            to={isLoginPage ? "/register" : "/login"}
-                                            className={`w-[110px] border ${buttonVariants({
-                                                variant: "secondary",
-                                            })}`}
-                                        >
-                                            {isLoginPage ? "Register" : "Login"}
-                                        </Link>
+                                        <LoginDialog/>
                                     </nav>
                                 </SheetContent>
                             </Sheet>
@@ -123,13 +116,8 @@ const Header = () => {
                         </nav>
 
                         <div className="hidden md:flex gap-2">
-                            <Link to={isLoginPage ? '/register' : '/login'}
-                                  className={`border ${buttonVariants({ variant: "secondary" })}`}
-                            >
-                                {isLoginPage ? 'Register' : 'Login'}
-                            </Link>
-
-                            <ModeToggle />
+                            <LoginDialog/>
+                            <ModeToggle/>
                         </div>
                     </NavigationMenuList>
                 </NavigationMenu>

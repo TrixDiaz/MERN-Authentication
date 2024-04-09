@@ -1,6 +1,6 @@
 import { LogoIcon } from "./Icons";
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <footer id="footer">
             <hr className="w-11/12 mx-auto" />
@@ -152,3 +152,5 @@ export const Footer = () => {
         </footer>
     );
 };
+
+export default Footer
