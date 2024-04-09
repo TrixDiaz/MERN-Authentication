@@ -11,12 +11,13 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+
 import {Menu} from "lucide-react"
 import {buttonVariants} from "./ui/button"
-import {Link} from "react-router-dom"
 import {ModeToggle} from "./mode-toggle"
 import {LogoIcon} from "./Icons"
 import LoginDialog from '@/components/LoginDialog'
+import {Link} from "react-router-dom"
 
 
 
@@ -102,16 +103,16 @@ const Header = () => {
 
                         {/* desktop */}
                         <nav className="hidden md:flex gap-2">
-                            {routeList.map((route) => (
-                                <Link
-                                    key={route.label}
-                                    to={route.href}
+                            {routeList.map((route: RouteProps, i) => (
+                                <a
+                                    href={route.href}
+                                    key={i}
                                     className={`text-[17px] ${buttonVariants({
                                         variant: "ghost",
                                     })}`}
                                 >
                                     {route.label}
-                                </Link>
+                                </a>
                             ))}
                         </nav>
 

@@ -8,6 +8,7 @@ import {Testimonials} from "@/components/Testimonials";
 import {Team} from "@/components/Team";
 import {Pricing} from "@/components/Pricing";
 import {Newsletter} from "@/components/Newsletter";
+import {FAQ} from '@/components/FAQ'
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 const Welcome = () => {
@@ -23,6 +24,7 @@ const Welcome = () => {
             <Team/>
             <Pricing/>
             <Newsletter/>
+            <FAQ/>
             <Footer/>
             <ScrollToTop/>
         </>
