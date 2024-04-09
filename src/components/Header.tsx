@@ -86,14 +86,14 @@ const Header = () => {
                                     </SheetHeader>
                                     <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                                         {routeList.map(({href, label}) => (
-                                            <Link
+                                            <a
                                                 key={label}
-                                                to={href}
+                                                href={href}
                                                 onClick={() => setIsOpen(false)}
                                                 className={buttonVariants({variant: "ghost"})}
                                             >
                                                 {label}
-                                            </Link>
+                                            </a>
                                         ))}
                                         <LoginDialog/>
                                     </nav>
