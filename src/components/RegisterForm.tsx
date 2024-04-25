@@ -44,7 +44,7 @@ const RegisterForm = () => {
             navigate('/dashboard');
         } catch (error) {
             console.error(error);
-             if (axios.isAxiosError(error)) {
+            if (axios.isAxiosError(error)) {
                 // Use the server's response message if available, for both known and unknown errors
                 const message = error.response?.data?.message || 'An unexpected error occurred. Please try again.';
                 setErrorMessage(message);
@@ -58,7 +58,7 @@ const RegisterForm = () => {
     return (<>
         <Card className="mx-auto mt-4">
             <CardContent className={'mt-4'}>
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleRegister} autoComplete='off'>
                     <div className="grid gap-4">
                         <div className="grid gap-2">
                             <Label htmlFor="name">Name</Label>
@@ -68,6 +68,7 @@ const RegisterForm = () => {
                                 value={name}
                                 onChange={handleName}
                                 placeholder="Jane Doe"
+                                autoComplete='off'
                                 required
                             />
                         </div>
@@ -79,23 +80,26 @@ const RegisterForm = () => {
                                 value={email}
                                 onChange={handleEmail}
                                 placeholder="m@example.com"
+                                autoComplete='off'
                                 required
                             />
                         </div>
                         <div className="grid gap-2">
                             <Label htmlFor="password">Password</Label>
-                            <Input id="password"
-                                   type="password"
-                                   value={password}
-                                   onChange={handlePassword}
-                                   required
+                            <Input
+                                id="password"
+                                type="password"
+                                value={password}
+                                onChange={handlePassword}
+                                autoComplete='off'
+                                required
                             />
                         </div>
-                       <div>
+                        <div>
                             <Button type="submit" className="w-full">
-                            Create an account
-                        </Button>
-                       </div>
+                                Create an account
+                            </Button>
+                        </div>
                         {errorMessage && (
                             <div className="mt-2 text-red-500 text-sm text-center">
                                 {errorMessage}

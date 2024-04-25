@@ -1,13 +1,15 @@
+import axios  from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import {
     Card,
     CardContent,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import axios  from "axios";
+
 
 const LoginForm = () => {
 
@@ -47,14 +49,12 @@ const LoginForm = () => {
                 // Handle non-Axios errors
                 setErrorMessage('An error occurred. Please check your connection and try again.');
             }
-
-
         }
     }
     return (<>
         <Card className={'mt-4'}>
             <CardContent>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} autoComplete='off'>
                     <div className="grid gap-4 mt-4">
                         <div className="grid gap-2 ">
                             <Label htmlFor="email">Email</Label>
@@ -64,6 +64,7 @@ const LoginForm = () => {
                                 value={email}
                                 onChange={handleEmail}
                                 placeholder="m@example.com"
+                                autoComplete='off'
                                 required
                             />
                         </div>
@@ -79,6 +80,7 @@ const LoginForm = () => {
                                 type="password"
                                 value={password}
                                 onChange={handlePassword}
+                                autoComplete='off'
                                 required />
                         </div>
                         <Button type="submit" className="w-full">
